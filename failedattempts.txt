@@ -1,0 +1,93 @@
+// for (block of blocks) {
+//     if (rectangleCollision(mike,block)) {
+
+//         let xDirection = Math.sign(mike.velocity.x);
+//         let yDirection = Math.sign(mike.velocity.y);
+
+//         let xOverlap = ((block.x + block.hitbox.x) - (mike.x + mike.hitbox.x + (mike.hitbox.width/2)));
+//         let yOverlap = ((block.y + block.hitbox.y) - (mike.y + mike.hitbox.y + (mike.hitbox.height/2)));
+
+//         console.log(xOverlap,yOverlap);
+
+//         if (Math.abs(yOverlap) < Math.abs(xOverlap)) { 
+
+//             if (mike.velocity.y > 0) {
+//                 onGround = true;
+//                 canDoubleJump = true;
+//             }
+
+//             mike.y += yOverlap; 
+//             mike.velocity.y = 0;
+//         } else { 
+//             mike.x += xOverlap; 
+//             mike.velocity.x = 0;
+//         }
+//     }
+// }
+
+// for (block of blocks) {
+//     let blockLeft = block.x;
+//     let blockRight = blockLeft + block.hitbox.width;
+//     let blockTop = block.y;
+//     let blockBottom = blockTop + block.hitbox.height;
+
+//     let mikeLeft = mike.x + mike.hitbox.x;
+//     let mikeRight = mikeLeft + mike.hitbox.width;
+//     let mikeTop = mike.y + mike.hitbox.y;
+//     let mikeBottom = mikeTop + mike.hitbox.height;
+
+//     let sameX = false;
+//     let sameY = false;
+
+//     // The objects will collide if they are next to each other on the y axis
+//     // on the next frame as the velocity will be applied
+//     if (mikeRight + mike.velocity.x > blockLeft && mikeLeft + mike.velocity.x < blockRight) {
+//         sameX = true;
+//     }
+    
+//     // Floor
+//     if (mike.velocity.y > 0 && sameX) {
+//         let spaceDown = blockTop - mikeBottom;
+
+//         if (mike.velocity.y > spaceDown && spaceDown >= 0) {
+//             mike.velocity.y = spaceDown;
+//             onGround = true;
+//             canDoubleJump = true;
+//         }
+//     }
+
+//     // Ceiling
+//     if (mike.velocity.y < 0 && sameX) {
+//         let spaceUp = blockBottom - mikeTop;
+
+//         if (mike.velocity.y < spaceUp && spaceUp <= 0) {
+//             mike.velocity.y = spaceUp;
+//         }
+//     }
+
+//     // The objects will collide if they are next to each other on the x axis
+//     // on the next frame as the velocity will be applied
+//     if (mikeBottom + mike.velocity.y > blockTop && mikeTop + mike.velocity.y < blockBottom) {
+//         sameY = true;
+//     }
+
+//     if (mike.velocity.x > 0 && sameY) {
+//         let spaceRight = blockLeft - mikeRight;
+        
+//         if (mike.velocity.x > spaceRight && spaceRight >= 0) {
+//             mike.velocity.x = spaceRight;
+//         }
+//     }
+
+//     if (mike.velocity.x < 0 && sameY) {
+//         let spaceLeft = blockRight - mikeLeft;
+
+//         if (mike.velocity.x < spaceLeft && spaceLeft <= 0) {
+//             mike.velocity.x = spaceLeft;
+//         }
+//     }
+// }
+
+// Update the actual position of the player
+// mike.x += mike.velocity.x;
+// mike.y += mike.velocity.y;
